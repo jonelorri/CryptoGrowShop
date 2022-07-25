@@ -14,7 +14,7 @@ function notification (e) {
         e.preventDefault();
         alert('Error (rellene todos los campos) ❌');
     } else {
-        fetch('<< YOUR SHEET.BEST API KEY >>', {
+        fetch('https://sheet.best/api/sheets/18415df0-3a54-46ca-9704-d46c1c0a5cfa', {
             method: 'POST',
             mode: 'cors',
             headers: {
