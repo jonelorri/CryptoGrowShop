@@ -2,7 +2,7 @@ import style from './App2.module.css';
 import {Link} from 'react-router-dom';
 
 function notification (e) {
-
+    e.preventDefault();
     let name = document.querySelector('.name').value;
     let ethAddress = document.querySelector('.ethAddress').value;
     let street = document.querySelector('.street').value;
@@ -11,7 +11,6 @@ function notification (e) {
     let postal = document.querySelector('.postal').value;
 
     if (!name || !ethAddress || !street || !city || !country || !postal) {
-        e.preventDefault();
         alert('Error (rellene todos los campos) ❌');
     } else {
         fetch('https://sheet.best/api/sheets/18415df0-3a54-46ca-9704-d46c1c0a5cfa', {
