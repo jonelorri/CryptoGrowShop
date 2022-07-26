@@ -1,5 +1,5 @@
 {
-  "homepage": "http://jonelorri.github.io/SeedSale",
+  "home": "https://jonelorri.github.io/SeedSale",
   "name": "seed-sale2",
   "version": "0.1.0",
   "private": true,
@@ -41,6 +41,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0"
+    "gh-pages": "^2.1.1"
   }
 }

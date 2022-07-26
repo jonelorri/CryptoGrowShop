@@ -50,7 +50,7 @@ export function App2 () {
                 <input className={style.submit} type='submit' onClick={notification}></input>
             </form>
             <p className={style.note}>* En caso de error con el pago, o con sus datos, se le devolverá automaticamente el dinero en un plazo de 7 días *</p>
-            <p className={style.note}>Puedes analizar nuestro contrato aquí -> <a style={{color: "rgba(255, 255, 255, 0.56)"}} href='https://rinkeby.etherscan.io/address/0xF5a6D5b7684B499693216a2ccE30bC8A0A91A4B4#code'>0xF5a6D5b7684B499693216a2ccE30bC8A0A91A4B4</a></p>
+            <p className={style.note}>Puedes analizar nuestro contrato aquí - <a style={{color: "rgba(255, 255, 255, 0.56)"}} href='https://polygonscan.com/address/0x157f938d313d83bb2c3d1a61a8878d42bb5c85c1#code'>0x157f938d313d83Bb2c3D1A61a8878d42bB5c85c1</a></p>
         </div>
     );
 }
