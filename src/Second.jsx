@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 export function Second(props) {
     const [aValue, setAValue] = useState(0);
     const [fValue, setFValue] = useState(0);
-    const [price, setPrice] = useState(((fValue * 0.003) + (aValue * 0.003) + 0.003).toFixed(3));
+    const [price, setPrice] = useState((fValue * 7) + (aValue * 7) + 7);
 
     const handleChange = event => {
         const result = event.target.value;
@@ -22,7 +22,7 @@ export function Second(props) {
     };
 
     useEffect(() => {
-        setPrice(((fValue * 0.003) + (aValue * 0.003) + 0.003).toFixed(3));
+        setPrice((fValue * 7) + (aValue * 7) + 7);
     }, [fValue, aValue]);
 
     return (
@@ -53,8 +53,8 @@ export function Second(props) {
                     <div onClick={handleValue}>
                         <h1>PAY</h1>
                     </div>
-                    <p className={style.price}>{price} eth</p>
-                    <p className={style.note}>* Recuerda actualizar tus datos de envío en <b>Account</b> antes o después de cada pedido * <br></br> Precio del envio = 0.003 eth</p>
+                    <p className={style.price}><b>{price} matic</b><br></br><br></br> Solo aceptamos pagos en la red de <b>Polygon</b></p>
+                    <p className={style.note}>* Recuerda actualizar tus datos de envío en <b>Account</b> antes o después de cada pedido * <br></br> Precio del envio = 7 matic</p>
             </div>
         </div>
     );

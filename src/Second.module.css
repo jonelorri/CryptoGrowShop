@@ -78,6 +78,7 @@
 .price {
     color: white;
     font-family: 'Rajdhani';
+    text-align: center;
 }
 
 .note {
