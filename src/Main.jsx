@@ -61,12 +61,14 @@ export function Main () {
     try {
       const { ethereum } = window;
 
-      if (ethereum && priceW > 0.003) {
+      if (ethereum && priceW > 6) {
         const provider = new ethers.providers.Web3Provider(ethereum);
         const signer = provider.getSigner();
         const seedSaleContract = new ethers.Contract(contractAddress, contractABI, signer);
 
-        const price = {value: ethers.utils.parseEther(priceW)};
+        console.log(priceW);
+        const price = {value: ethers.utils.parseEther(`${priceW}`)};
+        console.log(price);
         const Txn = await seedSaleContract.sendValues(aValue, fValue, price);
         console.log("Mining...", Txn.hash);
 
