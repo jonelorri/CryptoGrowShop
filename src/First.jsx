@@ -19,7 +19,7 @@ export function First () {
 
     return(
         <div style={{backgroundImage: `url(${background})`}} className={style.container}>
-            <h1 className='title'></h1>
+            <h1 className='title'> </h1>
             <h2>Do it the easy way</h2>
             <div className={style.gradient}></div>
         </div>

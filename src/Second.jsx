@@ -3,9 +3,11 @@ import seed from './img/seed.png';
 import { useEffect, useState } from 'react';
 
 export function Second(props) {
+    const unitPrice = 6;
+    const deliveryPrice = 6;
     const [aValue, setAValue] = useState(0);
     const [fValue, setFValue] = useState(0);
-    const [price, setPrice] = useState((fValue * 6) + (aValue * 6) + 6);
+    const [price, setPrice] = useState((fValue * unitPrice) + (aValue * unitPrice) + deliveryPrice);
 
     const handleChange = event => {
         const result = event.target.value;
@@ -22,7 +24,7 @@ export function Second(props) {
     };
 
     useEffect(() => {
-        setPrice((fValue * 6) + (aValue * 6) + 6);
+        setPrice((fValue * unitPrice) + (aValue * unitPrice) + deliveryPrice);
     }, [fValue, aValue]);
 
     return (
@@ -54,7 +56,7 @@ export function Second(props) {
                         <h1>PAY</h1>
                     </div>
                     <p className={style.price}><b>{price} matic</b><br></br><br></br> Solo aceptamos pagos en la red de <b>Polygon</b></p>
-                    <p className={style.note}>* Recuerda actualizar tus datos de envío en <b>Account</b> antes o después de cada pedido * <br></br> Precio del envio = 6 matic</p>
+                    <p className={style.note}>* En caso de haber introducido mal tus datos, vuelve a dar al botón de <b>PAY</b> y rellena de nuevo el formulario * <br></br> Precio del envio = {deliveryPrice} matic (Tiempo de entrega, de 2 a 5 días laborables) <br></br>Soporte: vulturefxtrading@gmail.com</p>
             </div>
         </div>
     );

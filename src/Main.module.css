@@ -6,8 +6,8 @@
     z-index: 1;
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    max-width: 1600px;
+    justify-content: flex-end;
+    max-width: 1500px;
     left: 0;
     right: 0;
     margin-left: auto; 
@@ -52,4 +52,99 @@
 
 footer {
     height: 110px;
+}
+
+.message {
+    font-family: 'Rajdhani';
+    color: rgb(255, 255, 255);
+    position: fixed;
+    background-color: rgba(10, 10, 10, 0.95);
+    box-shadow: 0 0 100px black;
+    z-index: 2;
+    border-radius: 3px;
+    border: 1px solid white;
+    width: 700px;
+    height: 750px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+    justify-content: center;
+}
+
+.displayNone {
+    display: none;
+}
+
+.message form {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+}
+
+.message form h1 {
+    text-align: center;
+    font-weight: 500;
+}
+
+.message form input {
+    margin-bottom: 30px;
+}
+
+.message button {
+    position: absolute;
+    right: 0;
+    margin: 25px;
+}
+
+.submit {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    height: 50px;
+    background-color: black;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+}
+
+.message2 {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+}
+
+.message2 h1 {
+    margin-top: 130px;
+    margin-bottom: 80px;
+    font-weight: 500;
+}
+
+.tick {
+    margin-top: 80px;
+    width: 100px;
+}
+
+@media (max-width: 700px) {
+    .message {
+        width: 100%;
+    }
+}
+
+@media (max-width: 478px) {
+    .message form {
+        width: 85%;
+    }
 }

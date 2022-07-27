@@ -36,9 +36,9 @@ export function App2 () {
 
     return(
         <div className={style.container}>
-            <h2><Link to="/" style={{ textDecoration: 'none', color: 'white' }}>Shop</Link></h2>
+            <h2><Link to="/" onClick={() => {window.location.href="/"}} style={{ textDecoration: 'none', color: 'white' }}>Shop</Link></h2>
             <h1>YOUR ACCOUNT</h1>
-            <p>Esta información se almacenará únicamente en nuestros servidores privados y borraremos todos los datos cada 30 días.<br></br>Por favor, rellene el formulário minutos antes o después de realizar su pedido.<br></br>Para más informacion, contacta con vulturefxtrading@gmail.com<br></br><b>Envíos solo a Península</b> 🇪🇸 </p>
+            <p>Aquí podrás actualizar tus datos de envío<br></br>Para más informacion, contacta con vulturefxtrading@gmail.com<br></br><b>Envíos solo a Península</b> 🇪🇸 </p>
             <form className='form'>
                 Nombre y Apellido<input className='name'></input>
                 Dirección de Ethereum (con la que realizas el pago)<input className='ethAddress'></input>
