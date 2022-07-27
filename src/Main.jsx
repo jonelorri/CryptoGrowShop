@@ -148,60 +148,66 @@ export function Main () {
   let i = 0;
   const text = "BUY YOUR SEEDS WITH CRYPTO";
 
-  function typing() {
-      if (i < text.length) {
-          document.querySelector('.title').innerHTML += text.charAt(i);
-          i++;
-          setTimeout(typing, 100)
-      }
+  async function typing() {
+    const { ethereum } = window;
+    const accounts = await ethereum.request({ method: "eth_accounts" });
+
+    if (!accounts[0] && i < text.length) {
+      document.querySelector('.title').innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typing, 100)
+    } 
+    if (accounts[0]){
+      document.querySelector('.title').innerHTML = text;
+    }
   }
 
-  document.addEventListener('readystatechange', event => {
-      typing();
+  window.addEventListener('load', event => {
+    typing();
   });
 
   useEffect(() => {
-      checkIfWalletIsConnected();
-      document.querySelector('.form').style.display = "flex";
+    checkIfWalletIsConnected();
+    document.querySelector('.form').style.display = "flex";
   }, [])
 
   return (
-      <div>
-          <div className={style.navbar}>
-              {!currentAccount && (
-                  <h2 onClick={connectWallet} className={style.login}>Login</h2>
-              )}
+    <div>
+        <div className={style.navbar}>
+          {!currentAccount && (
+            <h2 onClick={connectWallet} className={style.login}>Login</h2>
+          )}
+        </div>
+        <div style={{backgroundImage: `url(${background})`}} className={style.first}>
+          <h1 className='title'></h1>
+          <h2>Do it the easy way</h2>
+          <div className={style.gradient}></div>
+        </div>
+        <Second onClick={getData}></Second>
+        <div className={style.message}>
+          <form className='form'>
+            <h1>Datos del envío</h1>
+            Nombre y Apellido<input className='name'></input>
+            Dirección de Ethereum<input className='ethAddress' value={currentAccount}></input>
+            Calle, puerta<input className='street'></input>
+            Ciudad<input className='city'></input>
+            Provincia<input className='province'></input>
+            País<input className='country'></input>
+            Código Postal<input className='postal'></input>
+            <input className={style.submit} type='submit' onClick={notification}></input>
+          </form>
+          <button onClick={changeDisplay}>X</button>
+          <div className={style.message2}>
+            <h1>Información actualizada</h1>
+            <img alt='checkmark' src={tick} className={style.tick}></img>
           </div>
-          <div style={{backgroundImage: `url(${background})`}} className={style.first}>
-            <h1 className='title'></h1>
-            <h2>Do it the easy way</h2>
-            <div className={style.gradient}></div>
-          </div>
-          <Second onClick={getData}></Second>
-          <div className={style.message}>
-            <form className='form'>
-                <h1>Datos del envío</h1>
-                Nombre y Apellido<input className='name'></input>
-                Dirección de Ethereum<input className='ethAddress' value={currentAccount}></input>
-                Calle, puerta<input className='street'></input>
-                Ciudad<input className='city'></input>
-                Provincia<input className='province'></input>
-                País<input className='country'></input>
-                Código Postal<input className='postal'></input>
-                <input className={style.submit} type='submit' onClick={notification}></input>
-            </form>
-            <button onClick={changeDisplay}>X</button>
-            <div className={style.message2}>
-              <h1>Información actualizada</h1>
-              <img alt='checkmark' src={tick} className={style.tick}></img>
-            </div>
-          </div>
-          <div className={style.message3}>
-            <h1>No tienes suficiente Matic</h1>
-            <h2>X</h2>
-          </div>
-          <footer>
-          </footer>
-      </div>
+        </div>
+        <div className={style.message3}>
+          <h1>No tienes suficiente Matic</h1>
+          <h2>X</h2>
+        </div>
+        <footer>
+        </footer>
+    </div>
   );
 }
