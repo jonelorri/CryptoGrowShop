@@ -3,7 +3,7 @@ import background from './img/background.jpg';
 
 export function First () {
     let i = 0;
-    let text = "BUY YOUR SEEDS WITH CRYPTO";
+    const text = "BUY YOUR SEEDS WITH CRYPTO";
 
     function typing() {
         if (i < text.length) {
@@ -14,6 +14,7 @@ export function First () {
     }
 
     document.addEventListener('readystatechange', event => {
+        document.querySelector("title").innerHTML = "";
         typing();
     });
 
