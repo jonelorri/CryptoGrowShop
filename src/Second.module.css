@@ -110,3 +110,12 @@
     color: black;
     transition: 0.3s;
 }
+
+@media (max-width: 500px) {
+    .container2 input {
+      padding-left: 0;
+    }
+    .container1 input {
+        padding-left: 0;
+      }
+}
