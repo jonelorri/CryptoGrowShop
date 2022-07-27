@@ -96,7 +96,7 @@ export function Main () {
         alert('No tines suficiente Matic')
       }
     } else {
-      alert('Tienes que estar logeado')
+      alert('Tienes que estar logueado')
     }
   };
 
