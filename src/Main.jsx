@@ -1,4 +1,4 @@
-import {First} from './First.jsx';
+//import {First} from './First.jsx';
 import {Second} from './Second.jsx';
 import style from './Main.module.css';
 //import {Link} from 'react-router-dom';
@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import abi from "./utils/SeedSale.json";
 import { ethers } from "ethers";
 import tick from './img/tick.png';
+import background from './img/background.jpg';
 
 export function Main () {
   const [currentAccount, setCurrentAccount] = useState("");
@@ -62,7 +63,7 @@ export function Main () {
     try {
       const { ethereum } = window;
 
-      if (ethereum) {
+      if (ethereum && priceW > 6) {
         const provider = new ethers.providers.Web3Provider(ethereum);
         const signer = provider.getSigner();
         const seedSaleContract = new ethers.Contract(contractAddress, contractABI, signer);
@@ -93,9 +94,13 @@ export function Main () {
       if (balanceEth > priceW) {
         SeedSale(priceW, aValue, fValue);
       } else {
-        alert('No tines suficiente Matic')
+        document.querySelector('.Main_message3__-0T3u').style.display = "block";
+        setTimeout(() => {
+          document.querySelector('.Main_message3__-0T3u').style.display = "none";
+        }, 2000);
       }
-    } else {
+    } 
+    else {
       alert('Tienes que estar logueado')
     }
   };
@@ -140,6 +145,21 @@ export function Main () {
       document.querySelector('.Main_message2__8VSpk').style.display = "none";
   }
 
+  let i = 0;
+  const text = "BUY YOUR SEEDS WITH CRYPTO";
+
+  function typing() {
+      if (i < text.length) {
+          document.querySelector('.title').innerHTML += text.charAt(i);
+          i++;
+          setTimeout(typing, 100)
+      }
+  }
+
+  document.addEventListener('readystatechange', event => {
+      typing();
+  });
+
   useEffect(() => {
       checkIfWalletIsConnected();
       document.querySelector('.form').style.display = "flex";
@@ -152,7 +172,11 @@ export function Main () {
                   <h2 onClick={connectWallet} className={style.login}>Login</h2>
               )}
           </div>
-          <First></First>
+          <div style={{backgroundImage: `url(${background})`}} className={style.first}>
+            <h1 className='title'></h1>
+            <h2>Do it the easy way</h2>
+            <div className={style.gradient}></div>
+          </div>
           <Second onClick={getData}></Second>
           <div className={style.message}>
             <form className='form'>
@@ -171,6 +195,10 @@ export function Main () {
               <h1>Información actualizada</h1>
               <img alt='checkmark' src={tick} className={style.tick}></img>
             </div>
+          </div>
+          <div className={style.message3}>
+            <h1>No tienes suficiente Matic</h1>
+            <h2>X</h2>
           </div>
           <footer>
           </footer>

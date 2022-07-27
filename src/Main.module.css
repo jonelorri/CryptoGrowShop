@@ -137,6 +137,97 @@ footer {
     width: 100px;
 }
 
+.message3 {
+    font-family: 'Rajdhani';
+    width: 350px;
+    height: 148px;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    display: none;
+    z-index: 3;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 40px black;
+}
+
+.message3 h1 {
+    font-weight: 500;
+    font-size: 30px;
+    text-align: center;
+}
+
+.message3 h2 {
+    margin-top: -8px;
+    font-weight: 500;
+    font-size: 60px;
+    text-align: center;
+    color: rgb(215, 121, 255);
+    background-color: rgba(233, 181, 255, 0.336);
+}
+
+.first {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .first h1 {
+    text-shadow: 0 0 1vw white;
+    font-family: 'Rajdhani';
+    font-weight: 500;
+    text-align: center;
+    font-size: 3vw;
+    z-index: 1;
+  }
+  
+  .first h2 {
+    font-family: 'Rajdhani';
+    font-weight: 500;
+    z-index: 1;
+  }
+  
+  .gradient {
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    bottom: 0;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 22%, rgba(255,255,255,0) 100%);
+  }
+  
+  
+  @media (min-width: 2500px) {
+    .first h1 {
+      font-size: 75px;
+    }
+  }
+  
+  @media (max-width: 1300px) {
+    .first h1 {
+      font-size: 5vw;
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .first h1 {
+      font-size: 6vw;
+    }
+  }
+
 @media (max-width: 700px) {
     .message {
         width: 100%;
