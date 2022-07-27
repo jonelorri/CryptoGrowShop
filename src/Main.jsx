@@ -102,8 +102,6 @@ export function Main () {
 
   function notification (e) {
       e.preventDefault();
-      document.querySelector('.form').style.display = "none";
-      document.querySelector('.Main_message2__8VSpk').style.display = "flex";
       let name = document.querySelector('.name').value;
       let ethAddress = document.querySelector('.ethAddress').value;
       let street = document.querySelector('.street').value;
@@ -114,23 +112,26 @@ export function Main () {
 
       if (!name || !ethAddress || !street || !city || !province || !country || !postal) {
         alert('Error (rellene todos los campos) ❌');
-      } else {
-          fetch('https://sheet.best/api/sheets/18415df0-3a54-46ca-9704-d46c1c0a5cfa', {
-              method: 'POST',
-              mode: 'cors',
-              headers: {
-                  'Content-Type': 'application/json'
-              },
-              body: JSON.stringify({
-                  "NOMBRE_Y_APELLIDO": name,
-                  "ETH_ADDRESS": ethAddress,
-                  "CALLE": street,
-                  "CIUDAD": city,
-                  "PROVINCIA": province,
-                  "PAIS": country,
-                  "CODIGO_POSTAL": postal,
-              })
+      } 
+      else {
+        fetch('https://sheet.best/api/sheets/18415df0-3a54-46ca-9704-d46c1c0a5cfa', {
+          method: 'POST',
+          mode: 'cors',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+              "NOMBRE_Y_APELLIDO": name,
+              "ETH_ADDRESS": ethAddress,
+              "CALLE": street,
+              "CIUDAD": city,
+              "PROVINCIA": province,
+              "PAIS": country,
+              "CODIGO_POSTAL": postal,
+          })
         });
+        document.querySelector('.form').style.display = "none";
+        document.querySelector('.Main_message2__8VSpk').style.display = "flex";
       }
   };
 
