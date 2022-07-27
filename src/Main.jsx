@@ -162,9 +162,11 @@ export function Main () {
     }
   }
 
-  window.addEventListener('load', event => {
-    typing();
-  });
+  // window.addEventListener('load', event => {
+  //   typing();
+  // });
+
+  typing();
 
   useEffect(() => {
     checkIfWalletIsConnected();
