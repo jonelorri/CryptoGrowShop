@@ -181,7 +181,7 @@ export function Main () {
           )}
         </div>
         <div style={{backgroundImage: `url(${background})`}} className={style.first}>
-          <h1 className='title'> </h1>
+          <h1 className='title'>A</h1>
           <h2>Do it the easy way</h2>
           <div className={style.gradient}></div>
         </div>
