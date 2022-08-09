@@ -153,12 +153,12 @@ export function Main () {
     const accounts = await ethereum.request({ method: "eth_accounts" });
 
     if (!accounts[0] && i < text.length) {
-      document.querySelector('.title').innerHTML += text.charAt(i);
+      document.querySelector('.Main_title__yundW').innerHTML += text.charAt(i);
       i++;
       setTimeout(typing, 100)
     } 
     if (accounts[0]){
-      document.querySelector('.title').innerHTML = text;
+      document.querySelector('.Main_title__yundW').innerHTML = text;
     }
   }
 
@@ -177,7 +177,8 @@ export function Main () {
           )}
         </div>
         <div style={{backgroundImage: `url(${background})`}} className={style.first}>
-          <h1 className='title'></h1>
+          <h1 className={style.title}> </h1>
+          <h1 className={style.title2}>BUY YOUR SEEDS WITH CRYPTO</h1>
           <h2>Do it the easy way</h2>
           <div className={style.gradient}></div>
         </div>
