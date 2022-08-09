@@ -46,7 +46,7 @@ export function Main () {
         const { ethereum } = window;
   
         if (!ethereum) {
-          alert("Get MetaMask!");
+          alert("You need to download Metamask");
           return;
         }
   
@@ -161,10 +161,6 @@ export function Main () {
       document.querySelector('.title').innerHTML = text;
     }
   }
-
-  // window.addEventListener('load', event => {
-  //   typing();
-  // });
 
   typing();
 
